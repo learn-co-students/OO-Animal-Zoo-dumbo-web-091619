@@ -3,7 +3,6 @@ class Zoo
     @@all = []
     def initialize(name, location)
         @name = name
-
         @location = location
         @@all << self
     end
