@@ -17,7 +17,7 @@ class Zoo
 # end
 
     def animal_species
-    Animal.all.map {|animal| animal.species}.uniq
+    Animal.all.select {|animal| animal.species && animal.zoo.name == self.name}
     end
 
     def animal_nicknames
