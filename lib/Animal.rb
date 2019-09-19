@@ -8,5 +8,14 @@ class Animal
         @species = species
         @@all << self
     end
-    
+
+    def self.all
+        @@all
+    end
+
+    def zoo
+        Zoo.all.find do |zoo|
+            zoo == self
+        end
+    end
 end
