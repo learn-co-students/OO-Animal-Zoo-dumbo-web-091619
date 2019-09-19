@@ -12,20 +12,20 @@ class Zoo
     @@all
     end
 
-# def iteration(attr)
-#     Animal.all.map {|animal| animal.attr}
-# end
+def animals
+    Animal.all.select {|animal| animal.zoo == self}
+end
 
     def animal_species
-    Animal.all.select {|animal| animal.species && animal.zoo.name == self.name}
+    self.animals.select {|animal| animal.species}.uniq
     end
 
     def animal_nicknames
-    Animal.all.map {|animal| animal.nickname}
+    self.animals.map {|animal| animal.nickname}
     
     end
     def self.find_by_location(location)
-        Zoo.all.select {|zoos| zoos.location}
+        Zoo.all.select {|zoos| zoos.location === location}
     end
 
 end
