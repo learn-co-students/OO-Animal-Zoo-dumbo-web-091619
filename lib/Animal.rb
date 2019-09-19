@@ -9,37 +9,35 @@
 class Animal
 
     attr_reader :species, :nickname
-    attr_accessor :weight, :zoo
+    attr_accessor :weight
 
     @@all = []
-
 
     def initialize(species, weight, nickname, zoo = Zoo.all.sample)
       @species = species
       @weight = weight
       @nickname = nickname
-      @zoo = zoo 
-      push_animal_to_zoo(@zoo, self)
+      push_animal_to_zoo(zoo, self)
       @@all.push(self)
-    end 
+    end
 
-    def self.all 
+    def self.all
       @@all
-    end 
+    end
 
-    def zoo 
-      @zoo
-    end 
+    def zoo
+     Zoo.all.select { |zoo| zoo.my_animals.include?(self) }
+    end
 
     def self.find_by_species(species_type)
       self.all.select { |animal| animal.species == species_type }
-    end 
+    end
 
-private 
+ private
 
     def push_animal_to_zoo(zoo, animal_to_push)
         zoo.my_animals.push(animal_to_push)
-    end 
+    end
 
-end
+ end
 

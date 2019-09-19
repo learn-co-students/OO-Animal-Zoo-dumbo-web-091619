@@ -16,36 +16,35 @@ class Zoo
     @@all = [] #all instances of Zoo
 
     def initialize(name, location)
-        @name = name 
+        @name = name
         @location = location
         @@all.push(self)
         @my_animals = []
-    end 
+    end
 
-    def self.all 
+    def self.all
      @@all
-    end 
+    end
 
    def animals
     @my_animals
-   end 
-
+   end
 
     def self.find_by_location(my_location)
      self.all.select { |zoo| zoo.location == my_location }
-    end 
+    end
 
     def animal_species
      @my_animals.map { |animal| animal.species }.uniq
-    end 
+    end
 
     def find_by_species(species_type)
      @my_animals.select { |animal| animal.species == species_type }
-    end 
+    end
 
     def animal_nicknames
      animals.map { |animal| animal.nickname }
-    end 
-
-end
+    end
+    
+ end
 
