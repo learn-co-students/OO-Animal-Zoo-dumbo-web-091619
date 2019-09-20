@@ -16,20 +16,20 @@ class Zoo
     end
 
     def animal_species
-       animal_species = Animal.all.map do |animal|
+       animal_species_array = animals.map do |animal|
         animal.species.to_s
        end
-       animal_species.uniq
+       animal_species_array.uniq
     end
 
     def find_by_species(species)
-        Animal.all.select do |animal|
+        animals.select do |animal|
             animal.species == species
         end
     end
 
     def animal_nicknames
-        self.animals.map {|animal| animal.nickname}
+        animals.map {|animal| animal.nickname}
     end
 
     def self.find_by_location(location)
