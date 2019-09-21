@@ -17,7 +17,7 @@ def animals
 end
 
     def animal_species
-    self.animals.select {|animal| animal.species}.uniq
+    self.animals.map {|animal| animal.species}.uniq
     end
 
     def animal_nicknames
