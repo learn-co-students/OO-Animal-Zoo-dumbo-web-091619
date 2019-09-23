@@ -1,5 +1,12 @@
 # Zoo Lab
 
+Methods that start with # is a instance method.
+Methods that start with . is a class method.
+You call all on a class.
+
+Select returns every item that you do your select on in an array.
+Find searches for the 1st item that satisfies a condition. 
+
 Welcome to your first day as a Flatiron Zookeeper!
 Today, we are being asked to create two domain models - a `Zoo` model and an `Animal` model and build out their relationships! Keep in mind that an animal can only be in one location at a time!
 
